@@ -1,0 +1,214 @@
+header{
+ 
+     background-size: cover;
+     background-position: center;
+     
+   
+   }
+   .section{
+     padding-top: 5vw;
+     padding-bottom: 4vw;
+   }
+   .tabs .indicator{
+     background-color: #1a237e;
+   }
+   .tabs .tab a:focus, .tabs .tab a:focus.active{
+     background: transparent;
+   }
+  
+   nav .brand-logo{
+     height: 100px;
+     
+ }
+ nav .brand-logo img{
+      width: 60px;/*mañana del logo*/
+  }
+ /*post.html*/
+ .post-pic{
+   width: 100%;
+   height: 400px;
+   
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+ }
+ /***INICIO**/
+ .modal{
+  max-height:100%;
+  overflow:hidden;
+ }
+ 
+ input[type="submit"]{
+   width: 100%;
+   margin-top: 50px;
+ }
+ .modal-close{
+   position: absolute;
+   top:10px;
+   right:10px;
+   padding:0;
+   margin:0;
+ }
+
+
+ /***********Login************/
+ .login-div {
+  margin-top: 140px;
+  padding: 0px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 700px;
+  background: white;
+}
+
+.men {
+  width: 100vw;
+  height: 110vh;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 0px;
+  
+}
+/*******registro******/
+.login-div2 {
+  margin-top: 40px;
+  margin-bottom: 130px;
+  padding: 0px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 700px;
+  background: white;
+}
+.men1 {
+  width: 90vw;
+  height: 120vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 1100px;
+}
+
+.btn1{
+
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  
+   
+}
+.btn2{
+
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; 
+
+}
+/**/
+/*consulta1 infopaciente lista consulata*/
+
+.men2a{
+  width: 90vw;
+  height: 120vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 0px;
+}
+
+.login-div1 {
+  margin-top: 100px;
+
+  padding: 35px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 1200px;
+  background: white;
+}
+/**/
+
+
+
+.logo {
+
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+  margin:0 auto;
+  min-height: 150px;
+  min-width: 150px;
+  
+}
+
+
+.tabla1{
+  width: 30%;
+ height: 200px; 
+ }
+
+ 
+.login-div4 {
+  margin-top: 0px;
+  padding: 35px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 1200px;
+  background: white;
+}
+
+
+@media screen and (max-width: 0px){
+  header{
+    min-height: 500px;
+  }
+  .men{
+    width: 100%;
+  }
+}
+
+
+/*404
+.men404{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(125deg,#6a89cc,#b8e994);
+}
+
+.container{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #343434
+}
+  .container h1{
+    font-size: 160px;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 20px;
+    background: url(../assets/img/bg.jpg) center no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  
+  .container a{
+    text-decoration: none;
+    background: #e55039aa;
+    color: #fff;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.4s;
+  }
+  
+ */

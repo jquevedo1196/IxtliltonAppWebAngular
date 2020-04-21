@@ -1,0 +1,65 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav 
+  #drawer 
+  class="sidenav" 
+  fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      
+
+      <a mat-list-item routerLink="/iniciar"><i class="material-icons">person_pin</i>
+        Iniciar</a>
+        <a mat-list-item routerLink="/registro"><i class="material-icons">person_add</i>
+          Registrate</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+<!--aqui header-->
+
+<header>
+  <nav class="nav-wrapper blue">
+    <div class="container">
+      <a href="#" class="brand-logo valign-wrapper">
+        <img class="responsive-img left  hide-on-small-only" src="assets/img/logo.png"
+          alt="Logo de pagina" routerLink="/inicio"> Ixtlilton</a>         
+      </div>
+  </nav>
+</header>
+<span class="spacer1">Ixtlilton</span>
+
+<span class="spacer"></span>
+          <a routerLink="/iniciar" routerLinkActive="active"><button mat-button>Iniciar</button></a>
+          <a routerLink="/registro" routerLinkActive="active"><button mat-button>Registrate</button></a>
+          <a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom"
+              data-tooltip="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          <a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom"
+              data-tooltip="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          <a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom"
+              data-tooltip="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+<!--fin de header-->
+    </mat-toolbar>
+    
+<ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
