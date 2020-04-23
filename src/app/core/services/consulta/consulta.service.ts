@@ -19,7 +19,7 @@ export class ConsultaService {
       // tslint:disable-next-line:max-line-length
       Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6Ilt7XCJhdXRob3JpdHlcIjpcIlJPTEVfVVNFUlwifV0iLCJzdWIiOiJqZW5yaXF1ZV9xdEBob3RtYWlsLmNvbSIsImlhdCI6MTU4NzU5NzE1NiwiZXhwIjoxNTg3NjExMTU2fQ.Z6iljdTvemCB7OKiXQ0Ww4AwvCRdE7TMVj3rvrv6lWTIKAtxIJYhvDgWQOo7SVWfk9EL__Cz2SQz5AifAj8swA'
     });
-    return this.http.get<ConsultaModel[]>(environment.url_api + '/recetas/listar/QUTJ960701HDFVRS40', {
+    return this.http.get<ConsultaModel[]>(environment.url_api + '/medicos/listar', {
       headers: reqHeader
     });
   }
