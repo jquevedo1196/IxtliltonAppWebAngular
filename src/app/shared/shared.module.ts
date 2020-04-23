@@ -1,37 +1,43 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { LoginRoutingModule } from './login-routing.module';
-import { IniciarComponent } from './componentelogin/iniciar/iniciar.component';
-import { LogComponent } from './componentelogin/log/log.component';
-import {HeaderLogComponent} from './componentelogin/header-log/header-log.component';
-import {FooterLogComponent} from './componentelogin/footer-log/footer-log.component';
+
+import { HeaderSharedComponent } from './componentes/header-shared/header-shared.component';
+import {FooterSharedComponent} from './componentes/footer-shared/footer-shared.component';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
+
+
+
 
 @NgModule({
   declarations: [
-    IniciarComponent,
-    LogComponent,
-    HeaderLogComponent,
-    FooterLogComponent,
+    HeaderSharedComponent,
+    FooterSharedComponent,
+  ],
+  exports: [
+    HeaderSharedComponent,
+    FooterSharedComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    LoginRoutingModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
-  ],
+    MatTabsModule,
+    MatCardModule,
+    MatExpansionModule,
+  ]
 })
-export class LoginModule {}
-
-
-
+export class SharedModule { }
 
