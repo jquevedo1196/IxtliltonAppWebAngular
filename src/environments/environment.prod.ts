@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url_api: 'http://6a229cc8.ngrok.io',
+  url_api: 'http://ixtlilton_backend:8080/ixtlilton',
 };
