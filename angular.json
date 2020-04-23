@@ -28,9 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              
               {
-                "input":"src/my-estilo.scss"
+                "input": "src/my-estilo.scss"
               },
               "src/styles.scss"
             ],
@@ -130,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "IxtliltonV2"
+  "defaultProject": "IxtliltonV2",
+  "cli": {
+    "analytics": "db18cf4c-7442-46d3-aae6-b43b91f8d03b"
+  }
 }

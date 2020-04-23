@@ -4,7 +4,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 import {CommonModule} from '@angular/common';
+import {CoreModule} from './core/core.module';
 
 
 
@@ -25,6 +26,7 @@ import {CommonModule} from '@angular/common';
     AppComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
@@ -38,9 +40,7 @@ import {CommonModule} from '@angular/common';
     MatListModule,
     CommonModule,
     MatExpansionModule,
-
-
-
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
