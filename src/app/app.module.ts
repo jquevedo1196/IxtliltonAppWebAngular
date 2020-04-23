@@ -15,17 +15,20 @@ import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 import {CommonModule} from '@angular/common';
+import { LayoutComponent } from './layout/layout.component';
 
-
-
+import {SharedModule} from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
+
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatTabsModule,

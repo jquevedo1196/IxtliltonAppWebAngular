@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ListRoutingModule } from './list-routing.module';
 
 import {ConsultasComponent} from './componenteslist/consultas/consultas.component';
 import {InfoconsultasComponent} from './componenteslist/infoconsultas/infoconsultas.component';
-import {HeaderConsultasComponent} from './componenteslist/header-consultas/header-consultas.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,17 +15,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 
-
+import {SharedModule} from './../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     ConsultasComponent,
     InfoconsultasComponent,
-    HeaderConsultasComponent,
   ],
   imports: [
     CommonModule,
+    SharedModule,
+    RouterModule,
     ListRoutingModule,
     MatButtonModule,
     MatIconModule,
@@ -39,4 +40,5 @@ import {MatExpansionModule} from '@angular/material/expansion';
   ]
 })
 export class ListModule { }
+
 

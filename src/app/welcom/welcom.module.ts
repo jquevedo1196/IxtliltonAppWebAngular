@@ -5,7 +5,8 @@ import { WelcomRoutingModule } from './welcom-routing.module';
 
 import {BienvenidoComponent} from './comonenteswelcom/bienvenido/bienvenido.component';
 import {InfdoctorComponent} from './comonenteswelcom/infdoctor/infdoctor.component';
-import { HeaderWelcomComponent } from './comonenteswelcom/header-welcom/header-welcom.component';
+import {BienvenidaComponent} from './comonenteswelcom/bienvenida/bienvenida.component';
+
 
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,14 +15,18 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+
+import {SharedModule} from './../shared/shared.module';
+
 @NgModule({
   declarations: [
     BienvenidoComponent,
     InfdoctorComponent,
-    HeaderWelcomComponent,
+    BienvenidaComponent,
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule,
     WelcomRoutingModule,
     MatButtonModule,
