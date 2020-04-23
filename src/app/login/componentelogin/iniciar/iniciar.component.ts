@@ -19,8 +19,8 @@ export class IniciarComponent implements OnInit {
   }
 
   fetchConsultas() {
-    this.consultaService.getAllConsultsByCurp().subscribe(response => {
-      console.log(response)
+    this.consultaService.getAllConsultsByCurp().subscribe(consulta => {
+      this.consultas = consulta;
     });
   }
 }
