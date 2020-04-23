@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IxtliltonV2": {
+    "IxtliltonAppAngular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/IxtliltonV2",
+            "outputPath": "dist/IxtliltonAppAngular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "IxtliltonV2:build"
+            "browserTarget": "IxtliltonAppAngular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "IxtliltonV2:build:production"
+              "browserTarget": "IxtliltonAppAngular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IxtliltonV2:build"
+            "browserTarget": "IxtliltonAppAngular:build"
           }
         },
         "test": {
@@ -118,18 +118,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "IxtliltonV2:serve"
+            "devServerTarget": "IxtliltonAppAngular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "IxtliltonV2:serve:production"
+              "devServerTarget": "IxtliltonAppAngular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "IxtliltonV2",
+  "defaultProject": "IxtliltonAppAngular",
   "cli": {
     "analytics": "db18cf4c-7442-46d3-aae6-b43b91f8d03b"
   }
