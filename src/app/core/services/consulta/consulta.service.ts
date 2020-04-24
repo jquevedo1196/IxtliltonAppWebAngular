@@ -13,6 +13,7 @@ export class ConsultaService {
   }
 
   getAllConsultsByCurp() {
+
     const reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + environment.token
