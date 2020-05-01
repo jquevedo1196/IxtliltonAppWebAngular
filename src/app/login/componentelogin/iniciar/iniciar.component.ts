@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ConsultaModel} from '../../../core/models/consulta.model';
-import {ConsultaService} from '../../../core/services/consulta/consulta.service';
 
 @Component({
   selector: 'app-iniciar',
@@ -9,18 +7,9 @@ import {ConsultaService} from '../../../core/services/consulta/consulta.service'
 })
 export class IniciarComponent implements OnInit {
 
-  consultas: ConsultaModel[] = [];
-
-  constructor(private consultaService: ConsultaService) {
+  constructor() {
   }
 
-  ngOnInit() {
-    this.fetchConsultas();
-  }
-
-  fetchConsultas() {
-    this.consultaService.getAllConsultsByCurp().subscribe(consulta => {
-      this.consultas = consulta;
-    });
+  ngOnInit(): void {
   }
 }

@@ -4,7 +4,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -17,7 +17,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {CommonModule} from '@angular/common';
 import { LayoutComponent } from './layout/layout.component';
 import {CoreModule} from './core/core.module';
-
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
 import {SharedModule} from './shared/shared.module';
 
 
@@ -45,7 +46,10 @@ import {SharedModule} from './shared/shared.module';
     MatExpansionModule,
     CoreModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

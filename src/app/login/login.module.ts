@@ -11,6 +11,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatCardModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
   ],
 })
 export class LoginModule {}

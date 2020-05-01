@@ -1,8 +1,12 @@
 <div class="doc srow center-align">
-  <img src="assets/img/user1.jpg" class="logo1 responsive-img">
+  <img src="assets/img/user1.jpg" class="logo1 responsive-img" alt="User image">
   <h1>Bienvenido</h1>
 </div>
 
+<li *ngFor="let consulta of consultas">
+  {{consulta.receta.diagnostico}}
+  {{consulta.diagnostico.descripcion}}
+</li>
 
 <p class="flow-text indigo-text text-darken-4">Hola</p>
 
