@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ConsultaModel} from "../../../core/models/consulta.model";
+import {ConsultaService} from "../../../core/services/consulta/consulta.service";
 
 @Component({
   selector: 'app-bienvenida',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BienvenidaComponent implements OnInit {
 
-  constructor() { }
+  consultas: ConsultaModel[] = [];
 
-  ngOnInit(): void {
+  constructor(private consultaService: ConsultaService) {
+  }
+
+  ngOnInit() {
+    this.fetchConsultas();
+  }
+
+  fetchConsultas() {
+    this.consultaService.getAllConsultsByCurp().subscribe(consulta => {
+      this.consultas = consulta;
+    });
   }
 
 }

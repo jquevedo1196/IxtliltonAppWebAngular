@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {ConsultaModel} from '../../models/consulta.model';
 import {environment} from '../../../../environments/environment';
 
@@ -13,12 +13,6 @@ export class ConsultaService {
   }
 
   getAllConsultsByCurp() {
-    const reqHeader = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + environment.token
-    });
-    return this.http.get<ConsultaModel[]>(environment.url_api + '/recetas/listar/QUTJ960701HDFVRS40', {
-      headers: reqHeader
-    });
+    return this.http.get<ConsultaModel[]>(environment.url_api + '/recetas/listar/QUTJ960701HDFVRS40');
   }
 }
