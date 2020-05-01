@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  url_api: 'http://8e494b90.ngrok.io',
-  token: 'eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6Ilt7XCJhdXRob3JpdHlcIjpcIlJPTEVfVVNFUlwifV0iLCJzdWIiOiJqZW5yaXF1ZV9xdEBob3RtYWlsLmNvbSIsImlhdCI6MTU4ODAzNDc4NSwiZXhwIjoxNTg4MDQ4Nzg1fQ.55IAMRgV6q4TP85gJFF9ukgxY9J7et82JK71ueGdfGAn5gGsgDY0rLLgwjJc-5cYq6ZZZ5wzNPZ_4NmgSW-XYQ'
+  url_api: 'http://7ccdddaf.ngrok.io',
 };
 
 /*
