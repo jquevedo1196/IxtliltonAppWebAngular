@@ -6,7 +6,25 @@
 <li *ngFor="let consulta of consultas">
   {{consulta.receta.diagnostico}}
   {{consulta.diagnostico.descripcion}}
+  {{consulta.medico.cedula}}
+  <span *ngFor="let medicamento of consulta.medicamentos">
+    {{medicamento.dosis}}
+    {{medicamento.fechaFin}} <br>
+  </span>
 </li>
+
+<li>
+  {{medicos.nombre}} {{medicos.apellidoPaterno}} {{medicos.apellidoMaterno}}
+</li>
+
+<li>
+  {{paciente.nombre}} {{paciente.nacionalidad}} {{paciente.discapacidad.descripcion}}
+</li>
+
+<li>
+  <img alt="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{qr.QR}}">
+</li>
+
 
 <p class="flow-text indigo-text text-darken-4">Hola</p>
 
