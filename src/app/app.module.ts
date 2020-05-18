@@ -13,18 +13,24 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {CommonModule} from '@angular/common';
 import { LayoutComponent } from './layout/layout.component';
 import {CoreModule} from './core/core.module';
 
 import {SharedModule} from './shared/shared.module';
+/*nuevo25/4/2020*/
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+
+
 
   ],
   imports: [
@@ -44,6 +50,8 @@ import {SharedModule} from './shared/shared.module';
     CommonModule,
     MatExpansionModule,
     CoreModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

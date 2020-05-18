@@ -1,42 +1,62 @@
 
 <div class="men responsive">
-    <div class="login-div fixed">
-        
-        <div class="row center-align">
-          <img src="assets/img/user1.jpg" class="logo responsive-img">
-          <h5>Inicie sesión en Ixtlilton</h5>
-          
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-                  <i class="material-icons prefix">email</i>
-            <input id="email_input" type="email" class="validate">
-            <label for="email_input">Email</label>
-            <span class="helper-text" data-error="Incorrecto" data-success="correcto"></span>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <!--pasword-->
-          <div class="input-field col s12 center-align">
-            <i class="material-icons prefix">vpn_key</i>
-            <input id="password_input" type="password" class="validate">
-            <label for="password_input">Password</label>
-            <div><a class="link" href="#"><b>¿Se te olvidó tu contraseña?</b></a></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">Informacion de privacidad <a class="link" href="#"><b>Leer mas</b></a></div>
-        </div>
-        <div class="row"></div>
-        <div class="row">
-          
-          <div class="col s12 center-align"><a class="waves-effect waves-light blue btn link" routerLink="/bienvenido">Iniciar sesion</a></div>
-        </div>
-        <div class="row"></div>
-        <div class="col s12 center-align">¿No tienes una cuenta? <a class="link" routerLink="/registro"><b>Registrate</b></a></div>
+  <div class="login-div fixed">
+      
+      <div class="row center-align">
+        <img src="assets/img/user1.jpg" class="logo responsive-img">
+        <h5>Inicie sesión en Ixtlilton</h5>
       </div>
+<!--nuevo-->
+
+<div class="form-container">
+<form [formGroup]="contactForm" (ngSubmit)="onValidoForm()">
+<input type="text" formControlName="email" placeholder="ingrese su correo">
+<div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+  <div class="container-error-message" *ngIf="email.errors.required">
+    El email es requerido.
+  </div>
+  <div class="container-error-message" *ngIf="email.errors.minlength">
+    El correo electrónico debe tener al menos 5 caracteres.
+  </div>
+  <div class="container-error-message"
+    *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+    El valor tiene que ser una dirección de correo electrónico válida.
+  </div>
+</div>
+
+
+<input type="password" formControlName="password" placeholder="ingrese su password" >
+
+
+
+<div class="alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+  <div class="container-error-message" *ngIf="password.errors.required">
+    El email es requerido.
+  </div>
+  <div class="container-error-message" *ngIf="password.errors.minlength">
+    El correo electrónico debe tener al menos 8 caracteres.
+  </div>
+  <div class="container-error-message" *ngIf="password.errors.maxlength">
+    El correo electrónico debe tener al maximo 16 caracteres.
+  </div>
+
+</div>
+<div class="row"></div>
+<div class="row">
+  <div class="col s12">Informacion de privacidad <a class="link" href="#"><b>Leer mas</b></a></div>
+</div>
+<button type="submit" class="btn-send" color="primary" [disabled]="!contactForm.valid">Iniciar sesion</button>
+</form>
+</div>
+
+
+
+<!---->
+
+      <div class="row"></div>
+
+      <div class="col s12 center-align">¿No tienes una cuenta? <a class="link" routerLink="/registro"><b>Registrate</b></a></div>
     </div>
-    
+  </div>
+  
+  

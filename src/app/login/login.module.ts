@@ -11,7 +11,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { FormsModule } from '@angular/forms';
+/*nuevo25/4/20202*/
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
+/*fin nuevi*/
 @NgModule({
   declarations: [
     IniciarComponent,
@@ -28,6 +33,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatCardModule,
+    FormsModule,
   ],
 })
 export class LoginModule {}
