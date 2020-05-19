@@ -4,8 +4,13 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
   url_api: 'http://cb76e018.ngrok.io',
   token: 'eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6Ilt7XCJhdXRob3JpdHlcIjpcIlJPTEVfVVNFUlwifV0iLCJzdWIiOiJqZW5yaXF1ZV9xdEBob3RtYWlsLmNvbSIsImlhdCI6MTU4NzY3OTYyMiwiZXhwIjoxNTg3NjkzNjIyfQ.SIIU-j76KoUYEo52X5QWfjpZcBOnJcNFCxgdcYlzY8iZsnf2uFowYRV0KNsrf8qPSmTpGXztdMnvJ_cPaCqeiQ'
+=======
+  url_api: 'http://localhost:8082',
+  token: 'eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6Ilt7XCJhdXRob3JpdHlcIjpcIlJPTEVfVVNFUlwifV0iLCJzdWIiOiJqZW5yaXF1ZV9xdEBob3RtYWlsLmNvbSIsImlhdCI6MTU4NzY5ODgzOSwiZXhwIjoxNTg3NzEyODM5fQ.6mgXYRIm10ElqX7NDFha1umogr27DAIY0TYyoRu8mMVUTqrciTfio2tE64qD4bYj8HcVsD1CUbNlSRzFapYqeA'
+>>>>>>> d35e0e0eb9f0be2ed12f58d5696766b25ab2ad80
 };
 
 /*
