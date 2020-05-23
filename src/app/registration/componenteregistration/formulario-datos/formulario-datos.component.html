@@ -1,0 +1,390 @@
+<mat-horizontal-stepper linear #stepper>
+
+    <mat-step [stepControl]="regisForm">
+  
+      <ng-template matStepLabel>Datos personales</ng-template>
+  
+      <div class="men-reg responsive">
+        <div class="login-div-reg fixed">
+      <div class="form-container">
+        <form [formGroup]="regisForm" (ngSubmit)="onValidoForm()">
+          <!--cedula-->
+          <input type="text" formControlName="cedula" placeholder="ingrese su cedula">
+          <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+            <div class="container-error-message" *ngIf="cedula.errors.required">
+              La cedula es requerido.
+            </div>
+            <div class="container-error-message" *ngIf="cedula.errors.minlength">
+              La cedula debe tener al menos 8 caracteres.
+            </div>
+            <div class="container-error-message" *ngIf="cedula.errors.maxlength">
+              La cedula debe tener maximo 8 caracteres.
+            </div>
+          </div>
+          <!--curp-->
+          <input type="text" formControlName="curp" placeholder="ingrese su curp">
+          <div class="alert-danger" *ngIf="curp.invalid && (curp.dirty || curp.touched)">
+            <div class="container-error-message" *ngIf="curp.errors.required">
+              El curp es requerido.
+            </div>
+            <div class="container-error-message"
+              *ngIf="(curp.dirty || curp.touched) && curp.invalid && curp.errors.pattern">
+              El valor tiene que ser un curp válida.
+            </div>
+            <div class="container-error-message" *ngIf="curp.errors.minlength">
+              El curp debe tener al menos 18 caracteres.
+            </div>
+            <div class="container-error-message" *ngIf="curp.errors.maxlength">
+              El curp debe tener maximo 18 caracteres.
+            </div>
+          </div>
+          <!--nombre-->
+          <input type="text" formControlName="nombre" placeholder="ingrese su nombre(s)">
+          <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+            <div class="container-error-message" *ngIf="nombre.errors.required">
+              El nombre es requerido.
+            </div>
+            <div class="container-error-message" *ngIf="nombre.errors.minlength">
+              El nombre debe tener al menos 2 caracteres.
+            </div>
+            <div class="container-error-message" *ngIf="nombre.errors.maxlength">
+              El nombre debe tener maximo 50 caracteres.
+            </div>
+          </div>
+          <!--ap-->
+          <input type="text" formControlName="apellidoP" placeholder="ingrese su apellido paterno">
+          <div class="alert-danger" *ngIf="apellidoP.invalid && (apellidoP.dirty || apellidoP.touched)">
+            <div class="container-error-message" *ngIf="apellidoP.errors.required">
+              El apellido paterno es requerido.
+            </div>
+            <div class="container-error-message" *ngIf="apellidoP.errors.minlength">
+              El apellido paterno debe tener al menos 2 caracteres.
+            </div>
+            <div class="container-error-message" *ngIf="apellidoP.errors.maxlength">
+              El apellido paterno debe tener maximo 50 caracteres.
+            </div>
+          </div>
+          <!--am-->
+          <input type="text" formControlName="apellidoM" placeholder="ingrese su apellido materno">
+          <div class="alert-danger" *ngIf="apellidoM.invalid && (apellidoM.dirty || apellidoM.touched)">
+            <div class="container-error-message" *ngIf="apellidoM.errors.required">
+              El apellido materno es requerido.
+            </div>
+            <div class="container-error-message" *ngIf="apellidoM.errors.minlength">
+              El apellido materno debe tener al menos 8 caracteres.
+            </div>
+            <div class="container-error-message" *ngIf="apellidoM.errors.maxlength">
+              El apellido materno debe tener maximo 8 caracteres.
+            </div>
+          </div>
+          <!--fecha-->
+          <input type="date" formControlName="fecha" placeholder="ingrese su fecha de nacimiento">
+          <div class="alert-danger" *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
+            <div class="container-error-message" *ngIf="fecha.errors.required">
+              La fecha es requerido.
+            </div>
+          </div>
+          <!--sexo-->
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="sexo"
+            [(ngModel)]="favoriteSeason">
+            <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+              {{season}}
+            </mat-radio-button>
+          </mat-radio-group>
+          <div>Se selecciono {{favoriteSeason}}</div>
+          <!--nacionalidad-->
+          <div></div>
+          <mat-form-field>
+            <mat-label>nacionalidad</mat-label>
+            <mat-select formControlName="nacionalidad">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let nationality of nationality" [value]="nationality">{{nationality}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="alert-danger" *ngIf="nacionalidad.invalid && (nacionalidad.dirty || nacionalidad.touched)">
+            <div class="container-error-message" *ngIf="nacionalidad.errors.required">
+              La nacionalidad es requerido.
+            </div>
+          </div>
+          <!--especialidad-->
+          <div></div>
+          <mat-form-field>
+            <mat-label>especialidad</mat-label>
+            <mat-select formControlName="especialidad">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let specialty of specialty" [value]="specialty">{{specialty}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="alert-danger" *ngIf="especialidad.invalid && (especialidad.dirty || especialidad.touched)">
+            <div class="container-error-message" *ngIf="especialidad.errors.required">
+              La especialidad es requerido.
+            </div>
+          </div>
+          <!--subespecialidad-->
+          <div></div>
+          <mat-form-field>
+            <mat-label>subespecialidad</mat-label>
+            <mat-select formControlName="subespecialidad">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let subspecialty of subspecialty" [value]="subspecialty">{{subspecialty}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="alert-danger" *ngIf="subespecialidad.invalid && (subespecialidad.dirty || subespecialidad.touched)">
+            <div class="container-error-message" *ngIf="subespecialidad.errors.required">
+              La subespecialidad es requerido.
+            </div>
+          </div>
+          <!--subespecialidad-->
+          <div></div>
+          <mat-form-field>
+            <mat-label>clue</mat-label>
+            <mat-select formControlName="clue">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let clu of clu" [value]="clu">{{clu}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="alert-danger" *ngIf="clue.invalid && (clue.dirty || clue.touched)">
+            <div class="container-error-message" *ngIf="clue.errors.required">
+              El clue es requerido.
+            </div>
+          </div>
+          <!--fin de registros-->
+          <div></div>
+          <button type="submit" color="primary" [disabled]="!regisForm.valid" matStepperNext>siguiente</button>
+        </form>
+      </div>
+        </div>
+      </div>
+  
+    </mat-step>
+  
+  
+  
+  
+    <!--segunda parte-->
+    <!----------------->
+  
+  
+  
+    <mat-step [stepControl]="docForm">
+      <ng-template matStepLabel>Domicilio</ng-template>
+      <div class="men-reg responsive">
+        <div class="login-div-reg fixed">
+      <div class="form-container">
+        <form [formGroup]="docForm" (ngSubmit)="onDocForm()">
+        <!--tipo-->
+        <mat-form-field>
+          <mat-label>tipo</mat-label>
+          <mat-select formControlName="tipo">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let type of type" [value]="type">{{type}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="alert-danger" *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)">
+          <div class="container-error-message" *ngIf="tipo.errors.required">
+            El tipo es requerido.
+          </div>
+        </div>
+        <!--calle-->
+          <input type="text" formControlName="calle" placeholder="ingrese su calle">
+          <div class="alert-danger" *ngIf="calle.invalid && (calle.dirty || calle.touched)">
+            <div class="container-error-message" *ngIf="calle.errors.required">
+              La calle es requerido.
+            </div>
+          </div>
+          <!--NumeroExt-->
+          <input type="text" formControlName="numext" placeholder="ingrese su numero exterior">
+          <!--NumeroInt-->
+          <input type="text" formControlName="numint" placeholder="ingrese su numero interior">
+          <!--estado-->
+  <div></div>
+  <mat-form-field>
+    <mat-label>estado</mat-label>
+    <mat-select formControlName="estado">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let state of state" [value]="state">{{state}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="alert-danger" *ngIf="estado.invalid && (estado.dirty || estado.touched)">
+    <div class="container-error-message" *ngIf="estado.errors.required">
+      El estado es requerido.
+    </div>
+  </div>
+  <!--municipio-->
+  <div></div>
+  <mat-form-field>
+    <mat-label>municipio</mat-label>
+    <mat-select formControlName="municipio">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let municipality of municipality" [value]="municipality">{{municipality}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="alert-danger" *ngIf="municipio.invalid && (municipio.dirty || municipio.touched)">
+    <div class="container-error-message" *ngIf="municipio.errors.required">
+      El municipio es requerido.
+    </div>
+  </div>
+  <!--localidad-->
+  <div></div>
+  <mat-form-field>
+    <mat-label>localidad</mat-label>
+    <mat-select formControlName="localidad">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let location of location" [value]="location">{{location}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="alert-danger" *ngIf="localidad.invalid && (localidad.dirty || localidad.touched)">
+    <div class="container-error-message" *ngIf="localidad.errors.required">
+      La localidad es requerido.
+    </div>
+  </div>
+  <!--colonia-->
+  <div></div>
+  <mat-form-field>
+    <mat-label>colonia</mat-label>
+    <mat-select formControlName="colonia">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let Suburb of Suburb" [value]="Suburb">{{Suburb}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="alert-danger" *ngIf="colonia.invalid && (colonia.dirty || colonia.touched)">
+    <div class="container-error-message" *ngIf="colonia.errors.required">
+      La colonia es requerido.
+    </div>
+  </div>
+  <!--codigo postal-->
+  <div></div>
+  <input type="text" formControlName="codigopostal" placeholder="ingrese codigo postal">
+  <div class="alert-danger" *ngIf="codigopostal.invalid && (codigopostal.dirty || codigopostal.touched)">
+    <div class="container-error-message" *ngIf="codigopostal.errors.required">
+      La cedula es requerido.
+    </div>
+    <div class="container-error-message" *ngIf="(codigopostal.dirty || codigopostal.touched) && codigopostal.invalid && codigopostal.errors.pattern">
+      Formato incorrecto
+  </div>
+  </div>
+  <!--telefono1-->
+  <div></div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+1 &nbsp;</span>
+      <input type="tel"  matInput formControlName="telefono" placeholder="(+55) 55 55 55 55">
+      <div class="alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+        <div class="container-error-message" *ngIf="telefono.errors.required">
+          Un numero telefonico es requerido.
+        </div>
+        <div class="container-error-message" *ngIf="(telefono.dirty || telefono.touched) && telefono.invalid && telefono.errors.pattern">
+              Tiene que tener la estructura (+52) 55 55 55 55 
+         </div>
+      </div>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+  
+  
+  <!--telefono2 esta en prueba-->
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+1 &nbsp;</span>
+      <input type="tel" matInput  placeholder="(154) 215-4468">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+  </form>
+  
+  <!--fin de la 2 parte-->
+  <div></div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button type="submit" color="primary" [disabled]="!docForm.valid" matStepperNext>siguiente</button>
+        </form>
+      </div>
+        </div>
+      </div>
+    </mat-step>
+    <!--3 parte-->
+    
+    <mat-step [stepControl]="termiForm">
+
+      <ng-template matStepLabel>Final</ng-template>
+      <cdk-virtual-scroll-viewport itemSize="250" class="example-viewport">
+      <h2 mat-dialog-title>Install Angular</h2>
+      <mat-dialog-content class="mat-typography">
+        <h3>Develop across all platforms</h3>
+        <p>Learn one way to build applications with Angular and reuse your code and abilities to build
+          apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+      
+        <h3>Speed &amp; Performance</h3>
+        <p>Achieve the maximum speed possible on the Web Platform today, and take it further, via Web
+          Workers and server-side rendering. Angular puts you in control over scalability. Meet huge
+          data requirements by building data models on RxJS, Immutable.js or another push-model.</p>
+      
+        <h3>Incredible tooling</h3>
+        <p>Build features quickly with simple, declarative templates. Extend the template language with
+          your own components and use a wide array of existing components. Get immediate Angular-specific
+          help and feedback with nearly every IDE and editor. All this comes together so you can focus
+          on building amazing apps rather than trying to make the code work.</p>
+      
+        <h3>Loved by millions</h3>
+        <p>From prototype through global deployment, Angular delivers the productivity and scalable
+          infrastructure that supports Google's largest applications.</p>
+      
+        <h3>What is Angular?</h3>
+      
+        <p>Angular is a platform that makes it easy to build applications with the web. Angular
+          combines declarative templates, dependency injection, end to end tooling, and integrated
+          best practices to solve development challenges. Angular empowers developers to build
+          applications that live on the web, mobile, or the desktop</p>
+      
+        <h3>Architecture overview</h3>
+      
+        <p>Angular is a platform and framework for building client applications in HTML and TypeScript.
+        Angular is itself written in TypeScript. It implements core and optional functionality as a
+        set of TypeScript libraries that you import into your apps.</p>
+      
+        <p>The basic building blocks of an Angular application are NgModules, which provide a compilation
+        context for components. NgModules collect related code into functional sets; an Angular app is
+        defined by a set of NgModules. An app always has at least a root module that enables
+        bootstrapping, and typically has many more feature modules.</p>
+      
+        <p>Components define views, which are sets of screen elements that Angular can choose among and
+        modify according to your program logic and data. Every app has at least a root component.</p>
+      
+        <p>Components use services, which provide specific functionality not directly related to views.
+        Service providers can be injected into components as dependencies, making your code modular,
+        reusable, and efficient.</p>
+      
+        <p>Both components and services are simply classes, with decorators that mark their type and
+        provide metadata that tells Angular how to use them.</p>
+  
+      </mat-dialog-content>
+    </cdk-virtual-scroll-viewport>
+  
+  
+    <div class="form-container">
+  
+      <form [formGroup]="termiForm" (ngSubmit)="onTerminoForm()">
+      <!--calle-->
+      
+      <p>
+        <mat-checkbox formControlName="termino">He leido y acepto los terminos</mat-checkbox>
+      </p>
+        <div class="alert-danger" *ngIf="termino.invalid && (termino.dirty || termino.touched)">
+          <div class="container-error-message" *ngIf="termino.errors.required">
+            Aceptar terminos.
+          </div>
+        </div>
+  
+  
+  <!--fin de la 2 parte-->
+  <div></div>
+  
+        <button mat-button matStepperPrevious>Back</button>
+        <button type="submit" color="primary" [disabled]="!termiForm.valid" matStepperNext>Enviar</button>
+      </form>
+    </div>
+  
+  
+  
+    </mat-step>
+  
+  
+  </mat-horizontal-stepper>

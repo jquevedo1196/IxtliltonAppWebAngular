@@ -3,6 +3,9 @@
   <h1>Bienvenido</h1>
 </div>
 
+<div class="nombre">
+<p class="flow-text indigo-text text-darken-4">Mayumi Magali Mujica Alcantar</p>
+</div>
 <li *ngFor="let consulta of consultas">
   {{consulta.receta.diagnostico}}
   {{consulta.diagnostico.descripcion}}
@@ -26,5 +29,8 @@
 </li>
 
 
-<p class="flow-text indigo-text text-darken-4">Hola</p>
+<div class="example-button-row">
+  <a mat-raised-button color="primary" routerLink="/bienvenido/codigo">Nueva Consulta</a>
+</div>
+
 

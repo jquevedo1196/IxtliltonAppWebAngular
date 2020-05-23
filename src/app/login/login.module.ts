@@ -15,6 +15,12 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 
+import { FormsModule } from '@angular/forms';
+/*nuevo25/4/20202*/
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
+/*fin nuevi*/
 @NgModule({
   declarations: [
     IniciarComponent,
@@ -34,6 +40,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatCardModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatCardModule,
+    FormsModule,
   ],
 })
 export class LoginModule {}
