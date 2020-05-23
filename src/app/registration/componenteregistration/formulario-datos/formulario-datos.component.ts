@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -65,6 +66,7 @@ export class FormularioDatosComponent implements OnInit {
 
   docForm: FormGroup;
   regisForm: FormGroup;
+  termiForm: FormGroup;
 
 createFormGroup() {
   return new FormGroup ({
@@ -93,7 +95,7 @@ createFormGroup() {
   });
 }
 
-create2FormGroup(){
+create2FormGroup() {
   return new FormGroup({
     tipo: new FormControl('', [Validators.required]),
     calle: new FormControl('', [Validators.required,
@@ -114,29 +116,38 @@ create2FormGroup(){
   });
 }
 
+create3FormGroup(){
+  return new FormGroup({
+    termino: new FormControl('', [Validators.required]),
+  });
+}
 
 
-// tslint:disable-next-line: variable-name
-constructor(private _snackBar: MatSnackBar) {
+
+constructor(private route: Router) {
   this.regisForm = this.createFormGroup();
   this.docForm = this.create2FormGroup();
+  this.termiForm = this.create3FormGroup();
 }
 
 
 ngOnInit(): void {
   }
 onValidoForm() {
-  if (this.regisForm.valid) {
+  if (this.regisForm.valid){
 
  console.log('valid');
   } else {
 console.log('no valid');
   }
 }
-openSnackBar(message: string, action: string) {
-  this._snackBar.open(message, action, {
-    duration: 2000,
-  });
+onTerminoForm() {
+  if (this.termiForm.valid) {
+    this.route.navigate(['/inicio']);
+    console.log('valid');
+  } else {
+    console.log('no valid');
+  }
 }
 onDocForm() {
   if (this.docForm.valid) {
@@ -169,5 +180,8 @@ get colonia() {return this.docForm.get('colonia'); }
 get codigopostal() {return this.docForm.get('codigopostal'); }
 get telefono() {return this.docForm.get('telefono'); }
 
+get termino() {return this.termiForm.get('termino'); }
+
 
 }
+
