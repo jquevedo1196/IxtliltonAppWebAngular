@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {ConsultaModel} from "../../../core/models/consulta.model";
-import {ConsultaService} from "../../../core/services/consulta/consulta.service";
-import {MedicoModel} from "../../../core/models/medico.model";
-import {MedicoService} from "../../../core/services/medico/medico.service";
-import {PacienteService} from "../../../core/services/paciente/paciente.service";
-import {PacienteModel} from "../../../core/models/paciente.model";
-import {ObtenerqrService} from "../../../core/services/obtenerqr/obtenerqr.service";
-import {ObtenerqrModel} from "../../../core/models/obtenerqr.model";
+import {ConsultaModel} from '../../../core/models/consulta.model';
+import {ConsultaService} from '../../../core/services/consulta/consulta.service';
+import {MedicoModel} from '../../../core/models/medico.model';
+import {MedicoService} from '../../../core/services/medico/medico.service';
+import {PacienteService} from '../../../core/services/paciente/paciente.service';
+import {PacienteModel} from '../../../core/models/paciente.model';
+import {ObtenerqrService} from '../../../core/services/obtenerqr/obtenerqr.service';
+import {ObtenerqrModel} from '../../../core/models/obtenerqr.model';
 
 
 @Component({
@@ -17,7 +17,7 @@ import {ObtenerqrModel} from "../../../core/models/obtenerqr.model";
 export class BienvenidaComponent implements OnInit {
 
   consultas: ConsultaModel[] = [];
-  medicos: MedicoModel;
+  medico: MedicoModel;
   paciente: PacienteModel;
   qr: ObtenerqrModel;
 
@@ -44,8 +44,9 @@ export class BienvenidaComponent implements OnInit {
   }
 
   fetchMedicoByUsername() {
-    this.medicoService.getMedicoByUsername("medico12@correo.com").subscribe(medico => {
-      this.medicos = medico;
+    this.medicoService.getMedicoByUsername().subscribe(medico => {
+      console.log(medico);
+      this.medico = medico;
     });
   }
 
@@ -56,21 +57,21 @@ export class BienvenidaComponent implements OnInit {
   }
 
   fetchConsultasByUsername() {
-    this.consultaService.getAllRecetasdemedByUsername("medico12@correo.com").subscribe(consultas => {
+    this.consultaService.getAllRecetasdemedByUsername().subscribe(consultas => {
       this.consultas = consultas;
     });
   }
 
   fetchQrByUsername() {
-    this.obtenerqrService.getQrByUsername("medico12@correo.com").subscribe(qr => {
+    this.obtenerqrService.getQrByUsername().subscribe(qr => {
       this.qr = qr;
     });
   }
 
 
   putMedicoByUsername(medico: MedicoModel) {
-    this.medicoService.putMedicoByUsername(medico).subscribe(medico => {
-      this.medicos = medico;
+    this.medicoService.putMedicoByUsername(medico).subscribe(medicoEdit => {
+      this.medico = medicoEdit;
     });
   }
 }

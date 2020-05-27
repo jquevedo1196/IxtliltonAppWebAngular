@@ -5,7 +5,7 @@ import {AccessGuard} from './guard/access.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/inicio', pathMatch: 'full'},
-  {
+  /*{
     path: 'inicio',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
@@ -40,6 +40,7 @@ const routes: Routes = [
       },
     ]
   },
+  */
   {path: 'inicio',
 loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
 },
@@ -61,15 +62,19 @@ children: [
   pathMatch: 'full',
 },
   {path: 'bienvenido',
+  canActivate: [AccessGuard],
   loadChildren: () => import('./welcom/welcom.module').then(m => m.WelcomModule)
   },
   {path: 'medico',
+  canActivate: [AccessGuard],
   loadChildren: () => import('./medic/medic.module').then(m => m.MedicModule)
   },
   {path: 'consultas',
+  canActivate: [AccessGuard],
   loadChildren: () => import('./list/list.module').then(m => m.ListModule)
   },
   {path: 'bienvenido/codigo',
+  canActivate: [AccessGuard],
   loadChildren: () => import('./code/code.module').then(m => m.CodeModule)
   },
 ]

@@ -16,7 +16,7 @@ export class MedicoService {
 
   }
 
-  getMedicoByUsername(username: string) {
+  getMedicoByUsername() {
     return this.http.get<MedicoModel>(environment.url_api + '/medicos/getByUser/' + this.currentUser.user.username);
   }
 

@@ -14,13 +14,11 @@ export class ConsultaService {
 
   constructor(private http: HttpClient, private authService: AuthService) {
   }
-
-  getAllConsultsByCurp() {
-    console.log(this.currentUser.user.username);
-    return this.http.get<ConsultaModel[]>(environment.url_api + '/recetas/listar/QUTJ960701HDFVRS40');
+  getAllConsultsByCurp(string: pacCurp) {
+    return this.http.get<ConsultaModel[]>(environment.url_api + '/recetas/listar/' + pacCurp);
   }
 
-  getAllRecetasdemedByUsername(username: string) {
-    return this.http.get<ConsultaModel[]>(environment.url_api + '/recetas/recetasbymedico/' + this.currentUser.user.username);
+  getAllRecetasdemedByUsername() {
+    return this.http.get<ConsultaModel[]>(environment.url_api + '/recetas/recetasByMedico/' + this.currentUser.user.username);
   }
 }

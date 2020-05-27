@@ -15,7 +15,7 @@ export class ObtenerqrService {
 
   }
 
-  getQrByUsername(username: string) {
+  getQrByUsername() {
     return this.http.get<ObtenerqrModel>(environment.url_api + '/qr/obtenerByUsername/' + this.currentUser.user.username);
   }
 }

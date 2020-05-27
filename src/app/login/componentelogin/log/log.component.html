@@ -5,15 +5,15 @@
     <div class="row center-align">
       <img src="assets/img/user1.jpg" class="logo responsive-img">
       <h5>Inicie sesión en Ixtlilton</h5>
-
     </div>
+
   <div class="login-div fixed">
 
       <div class="row center-align">
         <img src="assets/img/user1.jpg" class="logo responsive-img">
         <h5>Inicie sesión en Ixtlilton</h5>
       </div>
-<!--nuevo-->
+
 
     <form [formGroup]="form" (ngSubmit)="login($event)">
       <mat-card>
@@ -85,10 +85,10 @@
     El email es requerido.
   </div>
   <div class="container-error-message" *ngIf="password.errors.minlength">
-    El correo electrónico debe tener al menos 8 caracteres.
+    El correo electrónico debe tener al menos 6 caracteres.
   </div>
   <div class="container-error-message" *ngIf="password.errors.maxlength">
-    El correo electrónico debe tener al maximo 16 caracteres.
+    El correo electrónico debe tener al maximo 100 caracteres.
   </div>
 
 </div>
@@ -97,6 +97,7 @@
   <div class="col s12">Informacion de privacidad <a class="link" href="#"><b>Leer mas</b></a></div>
 </div>
 <button type="submit" class="btn-send" color="primary" [disabled]="!contactForm.valid">Iniciar sesion</button>
+
 </form>
 </div>
 
@@ -108,5 +109,6 @@
 
       <div class="col s12 center-align">¿No tienes una cuenta? <a class="link" routerLink="/registro"><b>Registrate</b></a></div>
     </div>
-  </div>
 
+
+<!--se borro un /div-->

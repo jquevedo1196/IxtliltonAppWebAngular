@@ -6,6 +6,8 @@
 <div class="nombre">
 <p class="flow-text indigo-text text-darken-4">Mayumi Magali Mujica Alcantar</p>
 </div>
+
+
 <li *ngFor="let consulta of consultas">
   {{consulta.receta.diagnostico}}
   {{consulta.diagnostico.descripcion}}
@@ -17,11 +19,11 @@
 </li>
 
 <li>
-  {{medicos.nombre}} {{medicos.apellidoPaterno}} {{medicos.apellidoMaterno}}
+  {{medico.nombre}} {{medico.apellidoPaterno}} {{medico.apellidoMaterno}}
 </li>
 
 <li>
-  {{paciente.nombre}} {{paciente.nacionalidad}} {{paciente.discapacidad.descripcion}}
+  {{paciente.nombre}} {{paciente.nacionalidad}} {{paciente.curp}}
 </li>
 
 <li>
