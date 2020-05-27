@@ -7,6 +7,8 @@ import {PacienteService} from '../../../core/services/paciente/paciente.service'
 import {PacienteModel} from '../../../core/models/paciente.model';
 import {ObtenerqrService} from '../../../core/services/obtenerqr/obtenerqr.service';
 import {ObtenerqrModel} from '../../../core/models/obtenerqr.model';
+import {SessionService} from "../../../core/services/session/session.service";
+import {PacEmailModel} from "../../../core/models/pacEmail.model";
 
 
 @Component({
@@ -20,38 +22,45 @@ export class BienvenidaComponent implements OnInit {
   medico: MedicoModel;
   paciente: PacienteModel;
   qr: ObtenerqrModel;
+  pacienteEmail: PacEmailModel;
 
 
   constructor(private consultaService: ConsultaService,
               private medicoService: MedicoService,
               private pacienteService: PacienteService,
-              private obtenerqrService: ObtenerqrService) {
+              private obtenerqrService: ObtenerqrService,
+              private sessionService: SessionService) {
   }
 
   ngOnInit() {
+    this.hasPacienteEmailByUsername();
     this.fetchConsultas();
     this.fetchMedicoByUsername();
     this.fetchPacienteByUsername();
     this.fetchConsultasByUsername();
     this.fetchQrByUsername();
-
   }
 
+  hasPacienteEmailByUsername(){
+    this.sessionService.hasPacienteEmailByUsername().subscribe(email =>{
+      this.pacienteEmail = email;
+      }
+    );
+  }
   fetchConsultas() {
-    this.consultaService.getAllConsultsByCurp().subscribe(consulta => {
+    this.consultaService.getAllConsultsByCurp("QUTJ960701HDFVRS40").subscribe(consulta => {
       this.consultas = consulta;
     });
   }
 
   fetchMedicoByUsername() {
     this.medicoService.getMedicoByUsername().subscribe(medico => {
-      console.log(medico);
       this.medico = medico;
     });
   }
 
   fetchPacienteByUsername() {
-    this.pacienteService.getPacienteByUsername().subscribe(paciente => {
+    this.pacienteService.getPacienteByUsername(this.pacienteEmail.paciente).subscribe(paciente => {
       this.paciente = paciente;
     });
   }
