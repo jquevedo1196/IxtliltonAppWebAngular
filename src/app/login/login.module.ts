@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {LoginRoutingModule} from './login-routing.module';
 import {IniciarComponent} from './componentelogin/iniciar/iniciar.component';
-import {LogComponent} from './componentelogin/log/log.component';
+import {LogComponent} from './componentelogin/log/LogComponent';
 import {HeaderLogComponent} from './componentelogin/header-log/header-log.component';
 import {FooterLogComponent} from './componentelogin/footer-log/footer-log.component';
 import {MatButtonModule} from '@angular/material/button';
